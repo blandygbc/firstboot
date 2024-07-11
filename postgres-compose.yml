@@ -1,0 +1,24 @@
+version: "3.1"
+
+volumes:
+  pgdb:
+services:
+  db:
+    container_name: pgdb-firstboot
+    image: postgres:16
+    #restart: always
+    environment:
+      POSTGRES_PASSWORD: ${DB_USER:-postgres}
+      POSTGRES_USER: ${DB_PASS:-postgres}
+      POSTGRES_DB: ${DB_NAME:-firstboot}
+    ports:
+      - "${DB_PORT:-127.0.0.1:5432}:5432"
+    volumes:
+      - "${DB_DATA_LOCATION}:/var/lib/postgresql"
+      #- "${INIT_SCRIPT_LOCATION}:/docker-entrypoint-initdb.d/init-script.sql"
+
+  adminer:
+    image: adminer
+    #restart: always
+    ports:
+      - "${DB_ADM_PORT:8088}:8080"

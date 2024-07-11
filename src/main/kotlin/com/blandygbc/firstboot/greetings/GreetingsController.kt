@@ -1,4 +1,4 @@
-package com.blandygbc.firstboot
+package com.blandygbc.firstboot.greetings
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.web.bind.annotation.GetMapping
@@ -21,4 +21,7 @@ class GreetingsController(
     fun greet(): Message {
     return Message("Hello!", buildNumber)
     }
+
+    @GetMapping("/hello")
+    fun hello(): String = "Hello!"
 }

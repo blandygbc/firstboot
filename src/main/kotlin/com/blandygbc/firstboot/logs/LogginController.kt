@@ -1,4 +1,4 @@
-package com.blandygbc.firstboot
+package com.blandygbc.firstboot.logs
 
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping

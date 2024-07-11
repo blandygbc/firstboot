@@ -16,7 +16,7 @@
     </appender>
 
     <logger
-            name="com.blandygbc.firstboot.LogginController"
+            name="com.blandygbc.firstboot.logs.LogginController"
             level="TRACE">
             <appender-ref ref="FILE" />
     </logger>

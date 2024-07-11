@@ -16,10 +16,20 @@ blandygbc:
 spring:
   application:
     name: firstboot
+# ---- Profile ----
   config:
     activate:
       on-profile: dev
-
+# ---- Database ----
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/firstboot
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+# ---- Liquibase ----
+  liquibase:
+    enabled: true
+    change-log: db/changelog/log.xml
 # ---- Server Configs ----
 server:
   port: ${MY_PORT:8080}

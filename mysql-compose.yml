@@ -1,0 +1,18 @@
+version: '3.1'
+volumes:
+  dbdata:
+
+services:
+  mysql:
+    image: mysql:8.0.38
+    container_name: mysql8-firstboot
+    volumes:
+      - ${DB_DATA_LOCATION}:/var/lib/mysql
+      #- ${INIT_SCRIPT_LOCATION}:/docker-entrypoint-initdb.d/init-script.sql
+    #restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+      - MYSQL_DATABASE=firstboot
+      - MYSQL_TCP_PORT=33060
+    ports:
+      - "33060:33060"
