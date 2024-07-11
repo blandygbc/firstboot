@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: firstboot
+  config:
+    activate:
+      on-profile: prod
+# ---- Server Configs ----
+server:
+  port: ${MY_PORT:9090}
+# ---- Aplication configs ----
+blandygbc:
+  firstboot:
+    buildNumber: 1.1-alpha
+
+---
+spring:
+  application:
+    name: firstboot
+  config:
+    activate:
+      on-profile: dev
+
+# ---- Server Configs ----
+server:
+  port: ${MY_PORT:8080}
+
+# ---- Aplication configs ----
+blandygbc:
+  firstboot:
+    buildNumber: 1.5-dev
+logging:
+  level:
+    com:
+      blandygbc:
+        firstboot:
+          LogginController: TRACE
