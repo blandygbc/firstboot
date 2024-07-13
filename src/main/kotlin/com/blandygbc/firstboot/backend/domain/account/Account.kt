@@ -1,4 +1,4 @@
-package com.blandygbc.firstboot.accounts.domain.account
+package com.blandygbc.firstboot.backend.domain.account
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

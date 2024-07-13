@@ -1,9 +1,9 @@
-package com.blandygbc.firstboot.accounts
+package com.blandygbc.firstboot.api.accounts
 
-import com.blandygbc.firstboot.accounts.domain.account.Account
-import com.blandygbc.firstboot.accounts.domain.account.AccountRepository
-import com.blandygbc.firstboot.accounts.domain.account.CreateAccount
-import com.blandygbc.firstboot.accounts.domain.account.ViewAccount
+import com.blandygbc.firstboot.backend.domain.account.Account
+import com.blandygbc.firstboot.backend.domain.account.AccountRepository
+import com.blandygbc.firstboot.backend.domain.account.CreateAccount
+import com.blandygbc.firstboot.backend.domain.account.ViewAccount
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/accounts")
+@RequestMapping("/api/accounts")
 class AccountsController(val accountsRepository: AccountRepository) {
 
     @GetMapping

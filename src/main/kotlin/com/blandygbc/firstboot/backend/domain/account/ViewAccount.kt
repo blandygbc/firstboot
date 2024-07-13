@@ -1,4 +1,4 @@
-package com.blandygbc.firstboot.accounts.domain.account
+package com.blandygbc.firstboot.backend.domain.account
 
 data class ViewAccount(
     val id: Long,

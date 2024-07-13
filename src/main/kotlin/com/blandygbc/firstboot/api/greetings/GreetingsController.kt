@@ -1,4 +1,4 @@
-package com.blandygbc.firstboot.greetings
+package com.blandygbc.firstboot.api.greetings
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.web.bind.annotation.GetMapping
@@ -11,7 +11,7 @@ data class Message(
 )
 
 @RestController
-@RequestMapping("/greetings")
+@RequestMapping("/api/greetings")
 class GreetingsController(
     @Value("\${blandygbc.firstboot.buildNumber}")
     val buildNumber : String,

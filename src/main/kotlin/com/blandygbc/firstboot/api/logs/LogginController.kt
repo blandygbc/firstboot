@@ -1,16 +1,18 @@
-package com.blandygbc.firstboot.logs
+package com.blandygbc.firstboot.api.logs
 
 import org.slf4j.LoggerFactory
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
+@RequestMapping("/api/logs")
 class LogginController {
 
     val logger = LoggerFactory.getLogger(this::class.java)
 
-    @GetMapping("/log")
-    fun log(): String {
+    @GetMapping
+    fun log() {
         logger.trace("TRACE line")
         logger.debug("debug line")
         logger.warn("warn line")
@@ -21,7 +23,5 @@ class LogginController {
         } catch (e: Throwable){
             logger.error("ERROR failed to compute x",e)
         }
-
-        return "Loggin!"
     }
 }
