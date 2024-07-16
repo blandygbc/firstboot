@@ -92,12 +92,72 @@
                 columnNames="student_id,course_id"/>
 
         <createIndex tableName="student_enrolled_in_course" indexName="idx_course_id">
-            <column name="course_id"></column>
+            <column name="course_id"/>
         </createIndex>
 
         <insert tableName="student_enrolled_in_course">
             <column name="student_id">1</column>
             <column name="course_id">1</column>
         </insert>
+    </changeSet>
+
+    <changeSet id="4" author="blandygbc">
+        <createTable tableName="products">
+            <column name="id" type="Int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="Double">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <insert tableName="products">
+            <column name="name">Apple</column>
+            <column name="price">3.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Strawberry</column>
+            <column name="price">5.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Potato</column>
+            <column name="price">1.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Oranges</column>
+            <column name="price">2.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Tomatoes</column>
+            <column name="price">4.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Carrots</column>
+            <column name="price">1.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Banana</column>
+            <column name="price">1.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Pear</column>
+            <column name="price">2.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Grape</column>
+            <column name="price">4.99</column>
+        </insert>
+        <insert tableName="products">
+            <column name="name">Lettuce</column>
+            <column name="price">1.99</column>
+        </insert>
+    </changeSet>
+    <changeSet id="5" author="blandygbc">
+        <createIndex tableName="products" indexName="idx_price_id">
+            <column name="price" descending="true"/>
+            <column name="id"/>
+        </createIndex>
     </changeSet>
 </databaseChangeLog>
