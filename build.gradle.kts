@@ -32,6 +32,7 @@ dependencies {
 	implementation("org.liquibase:liquibase-core:4.28.0")
 	implementation("org.postgresql:postgresql:42.7.3")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation("org.springframework.boot:spring-boot-starter-security")
 
 }
 
