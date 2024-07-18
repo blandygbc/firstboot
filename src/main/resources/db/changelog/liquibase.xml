@@ -176,4 +176,28 @@
             create unique index ix_auth_username on authorities (username,authority);
         </sql>
     </changeSet>
+    <changeSet id="7" author="blandygbc">
+        <insert tableName="users">
+            <column name="username">user_db</column>
+            <column name="password">{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW</column>
+            <column name="enabled">1</column>
+        </insert>
+        <insert tableName="users">
+            <column name="username">admin_db</column>
+            <column name="password">{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW</column>
+            <column name="enabled">1</column>
+        </insert>
+        <insert tableName="authorities">
+            <column name="username">user_db</column>
+            <column name="authority">ROLE_USER</column>
+        </insert>
+        <insert tableName="authorities">
+            <column name="username">admin_db</column>
+            <column name="authority">ROLE_USER</column>
+        </insert>
+        <insert tableName="authorities">
+            <column name="username">admin_db</column>
+            <column name="authority">ROLE_ADMIN</column>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
